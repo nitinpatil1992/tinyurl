@@ -1,0 +1,13 @@
+{{ if not .FormEnabled }}
+<form method="post" enctype="multipart/form-data" action="/tinyurl">
+    <div class="form-group">
+      <label for="long_url">Long URL</label>
+      <input class="form-control" name="long_url" id="long_url" value="{{.LongURL}}">
+    </div>
+    <button class="btn btn-success">Generate TinyURL</button>
+</form>
+{{ else }}
+    <div>
+        {{ .Data.x }}
+    </div>
+{{ end }} 

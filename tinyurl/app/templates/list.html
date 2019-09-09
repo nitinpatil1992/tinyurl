@@ -1,0 +1,24 @@
+<h3>TinyURLs List</h3>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">LongURL</th>
+            <th scope="col">ShortURL</th>
+            <th scope="col">CreatedAT</th>
+            <th scope="col">Stats</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ range $key, $value := .}}
+        <tr>
+            <th scope="row">{{ $key }}</th>
+            <td><a target="_blank"  href={{.LongURL}}>{{.LongURL}}</a></td>
+            <td><a target="_blank"  href={{.ShortURL}}>{{.ShortURL}}</a></td>
+            <td> {{  $value.CreatedAt }}</td>
+            <td><a target="_blank"  href={{.StatsURL}}>{{.StatsURL}}</a></td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
