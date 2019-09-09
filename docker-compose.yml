@@ -1,0 +1,31 @@
+version: '3'
+services:
+  tinyurl:
+    build:
+      context: ./tinyurl
+    environment:
+      env: prod
+    depends_on:
+      - sqldb
+      - redishost 
+    ports:
+      - 9000:9000
+    networks:
+      - tinyurl
+  
+  sqldb:
+    build:
+      context: ./database
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: 'Europe/Berlin'
+    networks:
+      - tinyurl
+
+  redishost:
+    image: redis:4-alpine
+    networks:
+      - tinyurl
+
+networks:
+  tinyurl:

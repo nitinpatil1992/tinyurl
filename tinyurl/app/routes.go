@@ -27,7 +27,7 @@ var (
 
 func RegisterHandlers(config *config.Config) {
 	appConfig = config
-	Conn = CreateDBCon()
+	Conn = CreateDBCon(appConfig.DatabaseHost)
 	redisClient = GetRedisClient(appConfig.RedisHost)
 
 	r := mux.NewRouter()

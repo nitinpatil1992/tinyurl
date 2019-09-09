@@ -12,10 +12,10 @@ var (
 )
 
 type Config struct {
-	HostName  string
-	Port      string
-	Database  string
-	RedisHost string
+	HostName     string
+	Port         string
+	DatabaseHost string
+	RedisHost    string
 }
 
 func Init(environment string) *Config {

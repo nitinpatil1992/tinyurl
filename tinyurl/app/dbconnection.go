@@ -9,8 +9,8 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func CreateDBCon() *sql.DB {
-	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/tinyurl?parseTime=true")
+func CreateDBCon(dbHost string) *sql.DB {
+	db, err := sql.Open("mysql", dbHost)
 	if err != nil {
 		log.Warn(err.Error())
 	} else {

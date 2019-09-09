@@ -1,6 +1,6 @@
 {
     "HostName" : "http://localhost",
     "Port" : "9000",
-    "Database" : "root:@tcp(localhost:3306)/tinyurl?parseTime=true",
+    "DatabaseHost" : "root:@tcp(localhost:3306)/tinyurl?parseTime=true",
     "RedisHost" : "localhost:6379"
 }
