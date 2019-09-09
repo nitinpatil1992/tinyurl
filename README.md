@@ -14,10 +14,10 @@ Visit [localhost:9000/tinyurl](http://localhost:9000/tinyurl) to use tinyurl web
 
 # Demo Screenshots
 
-![demo1](https://github.com/nitinpatil1992/tinyurl/blob/master/images/demo1.png)
+<kbd>![demo1](https://github.com/nitinpatil1992/tinyurl/blob/master/images/demo1.png)</kbd>
 
-![demo2](https://github.com/nitinpatil1992/tinyurl/blob/master/images/demo2.png)
+<kbd>![demo2](https://github.com/nitinpatil1992/tinyurl/blob/master/images/demo2.png)</kbd>
 
-![demo3](https://github.com/nitinpatil1992/tinyurl/blob/master/images/demo3.png)
+<kbd>![demo3](https://github.com/nitinpatil1992/tinyurl/blob/master/images/demo3.png)</kbd>
 
-![demo4](https://github.com/nitinpatil1992/tinyurl/blob/master/images/demo4.png)
+<kbd>![demo4](https://github.com/nitinpatil1992/tinyurl/blob/master/images/demo4.png)</kbd>
