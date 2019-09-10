@@ -21,3 +21,6 @@ type RequestCount struct {
 	Date  string
 	Count int
 }
+type ErrorMessage struct {
+	Message string
+}
