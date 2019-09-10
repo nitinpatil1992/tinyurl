@@ -13,6 +13,9 @@ $ docker-compose up
 
 Visit [localhost:9000/tinyurl](http://localhost:9000/tinyurl) to use tinyurl webservice
 
+[localhost:9000/tinyurl/list](http://localhost:9000/tinyurl/list) list of tiny urls as well as links to respective stats page
+
+
 # Demo Screenshots
 
 <kbd>![demo1](https://github.com/nitinpatil1992/tinyurl/blob/master/images/demo1.png)</kbd>
