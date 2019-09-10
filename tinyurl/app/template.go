@@ -6,8 +6,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"path/filepath"
-
-	log "github.com/sirupsen/logrus"
 )
 
 type appTemplate struct {
@@ -34,8 +32,6 @@ func (tmpl *appTemplate) Execute(w http.ResponseWriter, r *http.Request, data in
 		Data:        data,
 		FormEnabled: true,
 	}
-	log.Info("data :", d)
-
 	if err := tmpl.t.Execute(w, d); err != nil {
 		return appErrorf(err, "could not write template: %v", err)
 	}

@@ -37,6 +37,7 @@ func RegisterHandlers(config *config.Config) {
 	r.Methods("GET").Path("/{short_url:[a-zA-Z0-9]{13}}").Handler(appHandler(HandleTinyUrl))
 	r.Methods("GET").Path("/tinyurl/list").Handler(appHandler(HandleList))
 	r.Methods("GET").Path("/tinyurl/{short_url:[a-zA-Z0-9]{13}}/stats").Handler(appHandler(HandleStats))
+	r.Methods("GET").Path("/tinyurl/{short_url:[a-zA-Z0-9]{13}}/requests").Handler(appHandler(HandleRquestCount))
 
 	http.Handle("/", handlers.CombinedLoggingHandler(os.Stderr, r))
 }

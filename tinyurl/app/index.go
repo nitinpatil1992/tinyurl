@@ -1,6 +1,7 @@
 package app
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -160,6 +161,21 @@ func HandleStats(w http.ResponseWriter, r *http.Request) *appError {
 
 	return statsTmpl.Execute(w, r, statsData)
 
+}
+
+func HandleRquestCount(w http.ResponseWriter, r *http.Request) *appError {
+	shortURL := mux.Vars(r)["short_url"]
+
+	requestsData := GetRequestCountPerDay(shortURL, 7)
+
+	statsData := struct {
+		RequestsData []model.RequestCount
+	}{
+		RequestsData: requestsData,
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(statsData)
+	return nil
 }
 
 func formHandler(r *http.Request) (*model.Form, error) {
