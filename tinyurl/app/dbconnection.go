@@ -2,6 +2,7 @@ package app
 
 import (
 	"database/sql"
+	"strings"
 	"time"
 	"tinyurl/app/model"
 
@@ -104,4 +105,29 @@ func CountTinyURLVisited(shortURL string) (int, error) {
 		return 0, err
 	}
 	return count, err
+}
+
+func GetRequestCountPerDay(shortURL string, days int) []model.RequestCount {
+
+	var requestCounts []model.RequestCount
+	results, err := Conn.Query("select DATE(visited_at) as Date, count(*) as Count from tiny_url_visits where short_url=? group by DATE(visited_at) asc limit ?", shortURL, days)
+
+	if err != nil {
+		log.Warn(err.Error())
+		return requestCounts
+	}
+
+	var requestCountData model.RequestCount
+
+	for results.Next() {
+		err = results.Scan(&requestCountData.Date, &requestCountData.Count)
+		if err != nil {
+			log.Fatal(err.Error())
+		}
+		dateString := strings.Split(requestCountData.Date, "T")
+		requestCounts = append(requestCounts, model.RequestCount{Date: dateString[0], Count: requestCountData.Count})
+	}
+	defer results.Close()
+
+	return requestCounts
 }

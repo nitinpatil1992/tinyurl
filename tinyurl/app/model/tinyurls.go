@@ -16,3 +16,8 @@ type UrlVisitsModel struct {
 	ShortURL  string `json:"short_url"`
 	VisitedAt string `json:"visited_at"`
 }
+
+type RequestCount struct {
+	Date  string
+	Count int
+}
