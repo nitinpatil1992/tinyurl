@@ -24,7 +24,7 @@ func HandleTinyUrlPost(w http.ResponseWriter, r *http.Request) *appError {
 	formData, err := formHandler(r)
 
 	if err != nil {
-		return appErrorf(err, "could not parse form: %v", err)
+		return errorTmpl.Execute(w, r, model.ErrorMessage{Message: err.Error()})
 	}
 	log.Debug("Form data:", formData)
 

@@ -51,7 +51,6 @@ type appError struct {
 }
 
 func (fn appHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	log.Info("Inside serverhttp")
 	if e := fn(w, r); e != nil {
 		log.Printf("Handler error: status code: %d, message: %s, underlying err: %#v",
 			e.Code, e.Message, e.Error)
