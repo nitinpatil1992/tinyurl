@@ -1,6 +1,6 @@
 # TinyURL
 
-Short url generator with capacity to habdle over 1 Billion urls (13!)
+Short url generator with capacity to handle over 1 Billion urls (13!)
 
 
 # Execution
